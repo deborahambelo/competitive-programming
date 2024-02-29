@@ -6,4 +6,5 @@ class Solution:
         num = int(''.join(map(str, number)))
         num += 1
         result = [int(d) for d in str(num)]
+        
         return result
