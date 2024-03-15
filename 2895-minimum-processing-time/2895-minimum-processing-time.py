@@ -1,32 +1,42 @@
-'''class Solution(object):
+# class Solution(object):
+#     def minProcessingTime(self, processorTime, tasks):
+#         tasks.sort(reverse = True)
+#         processorTime.sort()
+#         bs = len(tasks) // len(processorTime)
+#         subarrays = [] 
+#         for i in range(0, len(tasks), bs):
+#             sub = tasks[i:i+bs]
+#             subarrays.append(sub)
+        
+        
+#         current_max = float('-inf')
+#         for i in range(len(subarrays)):
+#             for j in range(len(processorTime)):
+#                 sum1 = subarrays[i][0] + processorTime[i]
+#                 current_max = max(current_max,sum1)
+#         return current_max
+class Solution(object):
     def minProcessingTime(self, processorTime, tasks):
-        tasks.sort(reverse = True)
+        tasks.sort(reverse=True)
         processorTime.sort()
         bs = len(tasks) // len(processorTime)
-        subarrays = [] 
+        subarrays = []
         for i in range(0, len(tasks), bs):
             sub = tasks[i:i+bs]
             subarrays.append(sub)
-        
-        
+
         current_max = float('-inf')
         for i in range(len(subarrays)):
-            for j in range(len(processorTime)):
-                sum1 = subarrays[i][0] + processorTime[i]
-                current_max = max(current_max,sum1)
+            for j in range(len(subarrays[i])):  # Iterate over subarrays, not processorTime
+                sum1 = subarrays[i][j] + processorTime[i]  # Use correct index for processorTime
+                current_max = max(current_max, sum1)
         return current_max
-    '''
-class Solution(object):
-    def minProcessingTime(self, processorTime, tasks):
-        """
-        """
-        processorTime.sort()
-        tasks.sort(reverse=True)
-        minimum_time = processorTime[0]
-        for i in range(len(tasks)):
-            minimum_time = max(minimum_time, processorTime[i//4] + tasks[i])
 
-        return minimum_time
-        
-                    
-            
+
+# Example usage:
+processorTime = [8, 10]
+tasks = [2, 2, 3, 1, 8, 7, 4, 5]
+sol = Solution()
+print(sol.minProcessingTime(processorTime, tasks))  # Output should be 16
+
+    
