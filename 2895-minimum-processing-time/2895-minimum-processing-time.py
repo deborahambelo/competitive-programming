@@ -14,12 +14,3 @@ class Solution(object):
                 sum1 = subarrays[i][j] + processorTime[i]
                 current_max = max(current_max, sum1)
         return current_max
-
-
-# Example usage:
-processorTime = [8, 10]
-tasks = [2, 2, 3, 1, 8, 7, 4, 5]
-sol = Solution()
-print(sol.minProcessingTime(processorTime, tasks))  # Output should be 16
-
-    
