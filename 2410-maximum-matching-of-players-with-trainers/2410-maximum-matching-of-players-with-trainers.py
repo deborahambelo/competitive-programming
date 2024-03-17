@@ -8,9 +8,9 @@ class Solution:
         j = 0
         
         while i < len(players) and j < len(trainers):
-            if players[i] <= trainers[j]:  # Use <= instead of <
+            if players[i] <= trainers[j]:
                 count += 1
-                i += 1  # Move to the next player
-            j += 1  # Move to the next trainer
+                i += 1 
+            j += 1 
         
         return count
