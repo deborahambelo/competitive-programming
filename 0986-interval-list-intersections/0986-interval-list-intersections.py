@@ -8,14 +8,12 @@ class Solution:
             start1, end1 = firstList[i]
             start2, end2 = secondList[j]
             
-            # Calculate the intersection
             start = max(start1, start2)
             end = min(end1, end2)
             
             if start <= end:
                 result.append([start, end])
             
-            # Move to the next interval
             if end1 < end2:
                 i += 1
             else:
