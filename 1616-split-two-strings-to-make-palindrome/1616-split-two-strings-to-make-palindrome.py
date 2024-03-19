@@ -7,16 +7,16 @@ class Solution(object):
         j = 0
         while j <=n/2 and b[j] == a[n-1-j]:
             j += 1
-        anchor = max(i, j)
-        left = anchor
-        right = n-1-anchor
+        ju = max(i, j)
+        left = ju
+        right = n-1-ju
         while right - left >= 1 and a[left] == a[right]:
             left += 1
             right -= 1
         if right - left < 1:
             return True
-        left = anchor
-        right =n-1-anchor
+        left = ju
+        right =n-1-ju
         while right - left >= 1 and b[left] == b[right]:
             left += 1
             right -= 1
