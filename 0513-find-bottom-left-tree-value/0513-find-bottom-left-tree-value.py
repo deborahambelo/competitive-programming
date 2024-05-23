@@ -10,13 +10,13 @@ class Solution:
             return None
 
         q = deque([(root, 0)])
-        current_level = -1
+        cur_level = -1
         leftmost = root.val
 
         while q:
             node, level = q.popleft()
-            if level > current_level:
-                current_level = level
+            if level > cur_level:
+                cur_level = level
                 leftmost = node.val
             if node.left:
                 q.append((node.left, level + 1))
