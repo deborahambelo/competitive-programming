@@ -19,7 +19,7 @@ class Solution:
         count = 0
         for i in range(n):
             for j in range(m):
-                if grid[i][j] == '1' and (i, j) not in visited:
+                if inbound(i,j):
                     dfs(i, j)
                     count += 1
         
