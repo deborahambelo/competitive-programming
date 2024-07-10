@@ -6,8 +6,6 @@ class Solution:
         count = 0
         while count != k:
             largest = -heapq.heappop(max_heap)
-            print(largest)
-            
             count+=1
         return largest
             
